@@ -1,0 +1,112 @@
+
+Enums -------------------------------------------------
+    Directions: North, South, East, West
+    Locale: Town, The Town Gates, The CrossRoads, The River, The Bridge, The Meadow,
+        The Woods, The Thicket, The Foggy Valley, The Collosal Cave, The Cavern
+
+
+
+Classes ------------------------------------------------
+    Item (General Class)
+        Properties: string Name, int MonetaryValue
+        Constructor: Item(name, monetaryValue=0)
+        Methods: bool HasMonetaryValue()
+                 ToString()
+    Potion
+        Inherits: Item
+        Properties: int BuffStat 
+        Constructor: Potion(name, monetaryValue, statBuff=0)
+                     ToString()            
+    Armor 
+        Inherits: Item
+        Properties: int maxProtection
+        Constructor: Armor(name, maxProtection, monetaryValue=0)
+        Methods: int GetProtection()
+                 BuffArmor(int buff)
+                 ToString()
+    Weapon
+        Inherits: Item
+        Properties: int maxDamage
+        Constructor: Weapon(name, maxDamage, monetaryValue)
+        Methods: int GetDamage()
+                 BuffWeapon(buff)
+                 ToString()
+
+
+    Location 
+        Properties: Locale CurrentLocation, string Description, Dictionary<Locale,Direction> Pathways,
+                    Actor Resident, string ResidentDescription, List<TextMenuItem<Player>> MenuItems,
+                    Action<Player> PreAction
+        Constructor: Location(location, description, resident=null, residentDescription=null, preaction=null)
+        Methods: MakePath(Direction direction, Locale location) [Right after constructor!]
+                 AddPreAction(preaction)
+                 RemovePreAction()
+                 RemoveResident()
+                 RunPreAction(player)
+                 MakePath(direction, location)
+                 AddMenuItem(item)
+                 RemoveMenuItem(menuItemDescription)
+                 TextMenu GetMenu()
+                 ToString()
+
+
+    TextMenuItem<T>
+        Properties: Description description, Action Action
+        Constructor: TextMenuItem(Description description, Action action)
+        Methods: Run()
+                 ToString()
+    TextMenu<T>
+        Properties: List<TextMenuItem> menuItems [numbers 1-N of choices specific to the location/actions taken]
+        Constructor: TextMenu(Location locaton) OR TextMenu()?
+        Methods: Run(int)
+                 GetUserChoice(T choice)
+                 AddTextMenuItem(T item)
+                 ToString()
+
+
+    Actor(General Class)
+        Properties: string Name, int MaxHealth, int CurrentHealth, Locale Location,
+                    Armor Armor, Weapon Weapon, List<Item> Belongings
+        Constructor: Actor(name, health, location=Locale.Nowhere)
+        Methods: GoTo(Locale nextLocation)
+                 TakeDamage(int damage)
+                 HealDamage(int heal)
+                 Equip(Armor armor)
+                 Equip(Weapon weapon)
+                 AddItem(Item item)
+                 Item RemoveItem(Item item)
+                 Attack(Actor actor)
+                 Defend(int damage)
+                 ToString()
+    Player
+        Inherits: Actor
+        Properties: Dictionary<Item, int> Bag, string PlayStyle, Dictionary<string,string> AttackDescriptions
+        Constructor: Player(string name, int health=20, Locale location=Locale.Nowhere)
+        Methods: SetPlayStyle(string playStyle)
+                 BuildAttackDescriptions()
+                 Attack(Actor actor, String description=")
+                 ChoosePotion(Player player)
+                 DrinkPotion(Potion potion, Player player)
+                 bool At(Locale location)
+                 AddItem(Item item)
+                 Item RemoveItem(Item item)
+                 int GetFinances()
+                 bool HasEnoughMoney(Item item)
+                 int SpendMoney(int price)
+                 public void BuyItem(Item item)
+                 ToString()
+    Monster
+        Inherits: Actor
+        Properties:
+        Constructor: Monster(string name, int health, Locale location=Locale.Nowhere)
+        Methods: List<Item> TakeLoot()
+                 ToString()
+
+Interfaces ----------------------------------------------
+    IInteractable
+        Allows for interaction between other Actors.
+        Methods: Equip(Armor armor)
+                 Equip(Weapon weapon)
+                 AddItem(Item item)
+                 Item RemoveItem(Item item)
+              

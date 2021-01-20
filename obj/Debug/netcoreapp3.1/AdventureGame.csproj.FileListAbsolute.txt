@@ -1,0 +1,12 @@
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/bin/Debug/netcoreapp3.1/AdventureGame.deps.json
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/bin/Debug/netcoreapp3.1/AdventureGame.runtimeconfig.json
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/bin/Debug/netcoreapp3.1/AdventureGame.runtimeconfig.dev.json
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/bin/Debug/netcoreapp3.1/AdventureGame.dll
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/bin/Debug/netcoreapp3.1/AdventureGame.pdb
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.csprojAssemblyReference.cache
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.AssemblyInfoInputs.cache
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.AssemblyInfo.cs
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.csproj.CoreCompileInputs.cache
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.dll
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.pdb
+/Users/applecore/Desktop/Desktop/csd228/AdventureGame/obj/Debug/netcoreapp3.1/AdventureGame.genruntimeconfig.cache
